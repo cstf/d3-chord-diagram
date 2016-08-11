@@ -1,0 +1,14 @@
+{
+  "name": "d3Chord",
+  "version": "0.0.1",
+  "author": "chani stefanski",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server . -a localhost -p 8000 -c-1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "http-server": "^0.9.0",
+    "underscore": "^1.8.3"
+  }
+}

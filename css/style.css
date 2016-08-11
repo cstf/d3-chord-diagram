@@ -1,0 +1,32 @@
+body {
+  font: 10px sans-serif;
+}
+
+.group-tick line {
+  stroke: #000;
+}
+#circle circle {
+  fill: none;
+  pointer-events: all;
+  margin: 0 auto;
+}
+
+.group path {
+  fill-opacity: .7;
+}
+
+path.chord {
+  stroke: #000;
+  stroke-width: .25px;
+  opacity: .8;
+}
+.chord-svg{
+  margin-left:auto; margin-right:auto; display:block;
+}
+#circle:hover path.fade {
+  display: none;
+}
+
+.ribbons {
+  fill-opacity: 0.67;
+}
