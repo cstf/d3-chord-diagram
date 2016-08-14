@@ -13,8 +13,17 @@
 
 
  	function link(scope, element, attrs) {
+ 		
+ 		var svg = d3.select(element[0]).append("svg");
+
+ 		scope.$watch('data', function(data) {
+ 	    	if (!data) return;
+			d3.select("svg").remove();
+ 			scope.render(data)
+ 		},true);
 
  		scope.render = function(data) {
+
  			var mpr = chordHelpers.chordMpr(scope.data);
  			mpr.addValuesToMap(scope.keya)
  			.setFilter(function (row, a, b) {
@@ -30,6 +39,17 @@
  			height = attrs.height,
  			outerRadius = Math.min(width, height) / 2 - 10,
  			innerRadius = outerRadius - 24;
+
+
+ 			svg = d3.select(element[0]).append("svg")
+ 			.attr("width", width)
+ 			.attr("height", height)
+ 			.attr('class','chord-svg')
+ 			.append("g")
+ 			.attr("id", "circle")
+ 			.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+ 			svg.append("circle")
+ 			.attr("r", outerRadius);
 
  			var formatPercent = d3.format(".1%");
  			var color = d3.scale.ordinal()
@@ -48,15 +68,7 @@
  			var path = d3.svg.chord()
  			.radius(innerRadius);
 
- 			var svg = d3.select("body").append("svg")
- 			.attr("width", width)
- 			.attr("height", height)
- 			.attr('class','chord-svg')
- 			.append("g")
- 			.attr("id", "circle")
- 			.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
- 			svg.append("circle")
- 			.attr("r", outerRadius);
+ 			
 
 
 			  // Compute the chord layout.
@@ -118,7 +130,7 @@
 
 
 			}
-			scope.render();
+			//scope.render();
 
 
 		}

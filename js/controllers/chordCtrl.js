@@ -3,7 +3,7 @@
 
     app.controller('chordCtrl', chordCtrl);
 
-    function chordCtrl($scope) {
+    function chordCtrl($scope,$timeout) {
     	$scope.data = [
     		{'has':'black','prefer':'red','count':20},
 			{'has':'red','prefer':'black','count':55},
@@ -21,4 +21,6 @@
 			{'has':'blond','prefer':'brown','count':50},
 			{'has':'blond','prefer':'blond','count':30},
 			{'has':'red','prefer':'red','count':2}];
+
+
     }

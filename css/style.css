@@ -10,7 +10,7 @@ body {
   pointer-events: all;
   margin: 0 auto;
 }
-
+h2{text-align: center;}
 .group path {
   fill-opacity: .7;
 }
